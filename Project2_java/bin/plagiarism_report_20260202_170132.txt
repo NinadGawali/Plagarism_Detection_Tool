@@ -1,0 +1,1106 @@
+================================================================================
+        COMPREHENSIVE PLAGIARISM DETECTION REPORT
+================================================================================
+Generated: 2026-02-02 17:01:32
+
+FILES ANALYZED:
+--------------------------------------------------------------------------------
+1. C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode1.java
+2. C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode2.java
+3. C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode3.java
+4. C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode4.java
+5. C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode5.java
+6. C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode6.java
+
+DETECTION PARAMETERS:
+--------------------------------------------------------------------------------
+Overall Similarity Threshold: 75.0%
+Line-by-Line Similarity Threshold: 70.0%
+N-gram Size: 5
+
+================================================================================
+                    EXECUTIVE SUMMARY
+================================================================================
+Total Comparisons: 15
+Suspicious Pairs: 0 (0.0% of total)
+Clean Pairs: 15
+
+================================================================================
+                    DETAILED ANALYSIS
+================================================================================
+
+################################################################################
+COMPARISON #1: StudentCode1.java vs StudentCode2.java
+STATUS: Normal - No significant plagiarism detected
+################################################################################
+
+FILE INFORMATION:
+--------------------------------------------------------------------------------
+File A: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode1.java
+  Total Lines: 39
+  Matched Lines: 27 (69.2% of file)
+
+File B: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode2.java
+  Total Lines: 39
+  Matched Lines: 16 (41.0% of file)
+
+SIMILARITY METRICS:
+--------------------------------------------------------------------------------
+  N-gram Jaccard Similarity : 0.726 (72.6%)
+  KMP Pattern Match         : 0.000
+  Rabin-Karp Pattern Match  : 0.000
+  Suffix Array Match        : 0.000
+  Edit Distance (Normalized): 0.899 (89.9%)
+
+  >> OVERALL AVERAGE SIMILARITY: 0.325 (32.5%)
+
+LINE-BY-LINE PLAGIARISM ANALYSIS:
+--------------------------------------------------------------------------------
+Total Similar Line Pairs: 27
+Average Line Similarity: 93.4%
+
+SIMILAR CODE BLOCKS DETECTED:
+--------------------------------------------------------------------------------
+
+  Block #2:
+    Location: Lines 5-6 (File A) ↔ Lines 5-6 (File B)
+    Size: 2 consecutive lines
+    Average Similarity: 90.0%
+
+    Detailed Line Matches:
+      Line 5 ↔ Line 5 (100.0% similar)
+        File A: public static void main(String[] args) {
+        File B: public static void main(String[] args) {
+      Line 6 ↔ Line 6 (80.0% similar)
+        File A: int number = 5;
+        File B: int num = 5;
+
+  Block #4:
+    Location: Lines 11-13 (File A) ↔ Lines 11-13 (File B)
+    Size: 3 consecutive lines
+    Average Similarity: 94.5%
+
+    Detailed Line Matches:
+      Line 11 ↔ Line 11 (100.0% similar)
+        File A: for (int i = 1; i <= 10; i++) {
+        File B: for (int i = 1; i <= 10; i++) {
+      Line 12 ↔ Line 12 (83.6% similar)
+        File A: System.out.println(i + "! = " + calculateFactorial(i));
+        File B: System.out.println(i + "! = " + factorial(i));
+      Line 13 ↔ Line 13 (100.0% similar)
+        File A: }
+        File B: }
+
+  Block #6:
+    Location: Lines 16-18 (File A) ↔ Lines 16-18 (File B)
+    Size: 3 consecutive lines
+    Average Similarity: 93.5%
+
+    Detailed Line Matches:
+      Line 16 ↔ Line 16 (80.4% similar)
+        File A: public static long calculateFactorial(int n) {
+        File B: public static long factorial(int n) {
+      Line 17 ↔ Line 17 (100.0% similar)
+        File A: if (n <= 1) {
+        File B: if (n <= 1) {
+      Line 18 ↔ Line 18 (100.0% similar)
+        File A: return 1;
+        File B: return 1;
+
+  Block #11:
+    Location: Lines 27-28 (File A) ↔ Lines 27-28 (File B)
+    Size: 2 consecutive lines
+    Average Similarity: 86.3%
+
+    Detailed Line Matches:
+      Line 27 ↔ Line 27 (82.6% similar)
+        File A: public static boolean isPrime(int num) {
+        File B: public static boolean checkPrime(int number) {
+      Line 28 ↔ Line 28 (90.0% similar)
+        File A: if (num <= 1) return false;
+        File B: if (number <= 1) return false;
+
+  Block #14:
+    Location: Lines 32-34 (File A) ↔ Lines 32-34 (File B)
+    Size: 3 consecutive lines
+    Average Similarity: 93.4%
+
+    Detailed Line Matches:
+      Line 32 ↔ Line 32 (93.9% similar)
+        File A: for (int i = 3; i <= Math.sqrt(num); i += 2) {
+        File B: for (int i = 3; i <= Math.sqrt(number); i += 2) {
+      Line 33 ↔ Line 33 (86.4% similar)
+        File A: if (num % i == 0) {
+        File B: if (number % i == 0) {
+      Line 34 ↔ Line 34 (100.0% similar)
+        File A: return false;
+        File B: return false;
+
+
+ALL SIMILAR LINE PAIRS:
+--------------------------------------------------------------------------------
+Format: [Line# in A] ↔ [Line# in B] | Similarity | Content Preview
+
+  [   1] ↔ [   1] |  96.3% | public class StudentCode1 {
+  [   5] ↔ [   5] | 100.0% | public static void main(String[] args) {
+  [   6] ↔ [   6] |  80.0% | int number = 5;
+  [   8] ↔ [   8] |  87.5% | System.out.println("Factorial of " + number + "...
+  [  11] ↔ [  11] | 100.0% | for (int i = 1; i <= 10; i++) {
+  [  12] ↔ [  12] |  83.6% | System.out.println(i + "! = " + calculateFactor...
+  [  13] ↔ [  13] | 100.0% | }
+  [  14] ↔ [  13] | 100.0% | }
+  [  16] ↔ [  16] |  80.4% | public static long calculateFactorial(int n) {
+  [  17] ↔ [  17] | 100.0% | if (n <= 1) {
+  [  18] ↔ [  18] | 100.0% | return 1;
+  [  19] ↔ [  13] | 100.0% | }
+  [  21] ↔ [  11] |  90.3% | for (int i = 2; i <= n; i++) {
+  [  23] ↔ [  13] | 100.0% | }
+  [  25] ↔ [  13] | 100.0% | }
+  [  27] ↔ [  27] |  82.6% | public static boolean isPrime(int num) {
+  [  28] ↔ [  28] |  90.0% | if (num <= 1) return false;
+  [  29] ↔ [  28] |  70.0% | if (num == 2) return true;
+  [  30] ↔ [  28] |  80.6% | if (num % 2 == 0) return false;
+  [  32] ↔ [  32] |  93.9% | for (int i = 3; i <= Math.sqrt(num); i += 2) {
+  [  33] ↔ [  33] |  86.4% | if (num % i == 0) {
+  [  34] ↔ [  34] | 100.0% | return false;
+  [  35] ↔ [  13] | 100.0% | }
+  [  36] ↔ [  13] | 100.0% | }
+  [  37] ↔ [  37] | 100.0% | return true;
+  [  38] ↔ [  13] | 100.0% | }
+  [  39] ↔ [  13] | 100.0% | }
+
+================================================================================
+
+################################################################################
+COMPARISON #2: StudentCode4.java vs StudentCode5.java
+STATUS: Normal - No significant plagiarism detected
+################################################################################
+
+FILE INFORMATION:
+--------------------------------------------------------------------------------
+File A: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode4.java
+  Total Lines: 78
+  Matched Lines: 50 (64.1% of file)
+
+File B: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode5.java
+  Total Lines: 77
+  Matched Lines: 26 (33.8% of file)
+
+SIMILARITY METRICS:
+--------------------------------------------------------------------------------
+  N-gram Jaccard Similarity : 0.444 (44.4%)
+  KMP Pattern Match         : 0.000
+  Rabin-Karp Pattern Match  : 0.000
+  Suffix Array Match        : 0.000
+  Edit Distance (Normalized): 0.824 (82.4%)
+
+  >> OVERALL AVERAGE SIMILARITY: 0.254 (25.4%)
+
+LINE-BY-LINE PLAGIARISM ANALYSIS:
+--------------------------------------------------------------------------------
+Total Similar Line Pairs: 50
+Average Line Similarity: 86.5%
+
+SIMILAR CODE BLOCKS DETECTED:
+--------------------------------------------------------------------------------
+
+  Block #4:
+    Location: Lines 8-9 (File A) ↔ Lines 7-8 (File B)
+    Size: 2 consecutive lines
+    Average Similarity: 92.2%
+
+    Detailed Line Matches:
+      Line 8 ↔ Line 7 (100.0% similar)
+        File A: public static void main(String[] args) {
+        File B: public static void main(String[] args) {
+      Line 9 ↔ Line 8 (84.4% similar)
+        File A: int[] numbers = {64, 34, 25, 12, 22, 11, 90};
+        File B: int[] data = {64, 34, 25, 12, 22, 11, 90};
+
+  Block #9:
+    Location: Lines 27-28 (File A) ↔ Lines 26-27 (File B)
+    Size: 2 consecutive lines
+    Average Similarity: 80.0%
+
+    Detailed Line Matches:
+      Line 27 ↔ Line 26 (73.1% similar)
+        File A: int n = arr.length;
+        File B: int length = array.length;
+      Line 28 ↔ Line 27 (86.8% similar)
+        File A: for (int i = 0; i < n - 1; i++) {
+        File B: for (int i = 0; i < length - 1; i++) {
+
+  Block #12:
+    Location: Lines 32-34 (File A) ↔ Lines 31-33 (File B)
+    Size: 3 consecutive lines
+    Average Similarity: 87.8%
+
+    Detailed Line Matches:
+      Line 32 ↔ Line 31 (90.0% similar)
+        File A: int temp = arr[j];
+        File B: int temp = array[j];
+      Line 33 ↔ Line 32 (83.3% similar)
+        File A: arr[j] = arr[j + 1];
+        File B: array[j] = array[j + 1];
+      Line 34 ↔ Line 33 (90.0% similar)
+        File A: arr[j + 1] = temp;
+        File B: array[j + 1] = temp;
+
+  Block #18:
+    Location: Lines 41-42 (File A) ↔ Lines 40-41 (File B)
+    Size: 2 consecutive lines
+    Average Similarity: 75.8%
+
+    Detailed Line Matches:
+      Line 41 ↔ Line 40 (70.4% similar)
+        File A: for (int value : arr) {
+        File B: for (int element : array) {
+      Line 42 ↔ Line 41 (81.3% similar)
+        File A: System.out.print(value + " ");
+        File B: System.out.print(element + " ");
+
+  Block #22:
+    Location: Lines 47-48 (File A) ↔ Lines 46-47 (File B)
+    Size: 2 consecutive lines
+    Average Similarity: 79.3%
+
+    Detailed Line Matches:
+      Line 47 ↔ Line 46 (84.6% similar)
+        File A: public static int findMin(int[] arr) {
+        File B: public static int getMin(int[] array) {
+      Line 48 ↔ Line 47 (73.9% similar)
+        File A: int min = arr[0];
+        File B: int minimum = array[0];
+
+  Block #41:
+    Location: Lines 75-76 (File A) ↔ Lines 74-75 (File B)
+    Size: 2 consecutive lines
+    Average Similarity: 72.2%
+
+    Detailed Line Matches:
+      Line 75 ↔ Line 74 (70.0% similar)
+        File A: public static double calculateAverage(int[] arr) {
+        File B: public static double getMean(int[] array) {
+      Line 76 ↔ Line 75 (74.5% similar)
+        File A: return (double) calculateSum(arr) / arr.length;
+        File B: return (double) getSum(array) / array.length;
+
+
+ALL SIMILAR LINE PAIRS:
+--------------------------------------------------------------------------------
+Format: [Line# in A] ↔ [Line# in B] | Similarity | Content Preview
+
+  [   1] ↔ [   1] |  88.9% | import java.util.ArrayList;
+  [   2] ↔ [   1] |  75.0% | import java.util.List;
+  [   4] ↔ [   3] |  96.3% | public class StudentCode4 {
+  [   8] ↔ [   7] | 100.0% | public static void main(String[] args) {
+  [   9] ↔ [   8] |  84.4% | int[] numbers = {64, 34, 25, 12, 22, 11, 90};
+  [  16] ↔ [  10] |  71.1% | System.out.println("\nSorted array:");
+  [  20] ↔ [  19] |  70.9% | System.out.println("\nMin value: " + findMin(nu...
+  [  24] ↔ [  23] | 100.0% | }
+  [  26] ↔ [   7] |  71.4% | public static void bubbleSort(int[] arr) {
+  [  27] ↔ [  26] |  73.1% | int n = arr.length;
+  [  28] ↔ [  27] |  86.8% | for (int i = 0; i < n - 1; i++) {
+  [  29] ↔ [  27] |  76.3% | for (int j = 0; j < n - i - 1; j++) {
+  [  30] ↔ [  29] |  86.7% | if (arr[j] > arr[j + 1]) {
+  [  32] ↔ [  31] |  90.0% | int temp = arr[j];
+  [  33] ↔ [  32] |  83.3% | arr[j] = arr[j + 1];
+  [  34] ↔ [  33] |  90.0% | arr[j + 1] = temp;
+  [  35] ↔ [  23] | 100.0% | }
+  [  36] ↔ [  23] | 100.0% | }
+  [  37] ↔ [  23] | 100.0% | }
+  [  38] ↔ [  23] | 100.0% | }
+  [  40] ↔ [   7] |  73.8% | public static void printArray(int[] arr) {
+  [  41] ↔ [  40] |  70.4% | for (int value : arr) {
+  [  42] ↔ [  41] |  81.3% | System.out.print(value + " ");
+  [  43] ↔ [  23] | 100.0% | }
+  [  44] ↔ [  43] | 100.0% | System.out.println();
+  [  45] ↔ [  23] | 100.0% | }
+  [  47] ↔ [  46] |  84.6% | public static int findMin(int[] arr) {
+  [  48] ↔ [  47] |  73.9% | int min = arr[0];
+  [  49] ↔ [  27] |  76.3% | for (int i = 1; i < arr.length; i++) {
+  [  50] ↔ [  49] |  76.0% | if (arr[i] < min) {
+  [  52] ↔ [  23] | 100.0% | }
+  [  53] ↔ [  23] | 100.0% | }
+  [  54] ↔ [  53] |  73.3% | return min;
+  [  55] ↔ [  23] | 100.0% | }
+  [  57] ↔ [  46] |  79.5% | public static int findMax(int[] arr) {
+  [  58] ↔ [  57] |  73.9% | int max = arr[0];
+  [  59] ↔ [  27] |  76.3% | for (int i = 1; i < arr.length; i++) {
+  [  60] ↔ [  59] |  76.0% | if (arr[i] > max) {
+  [  62] ↔ [  23] | 100.0% | }
+  [  63] ↔ [  23] | 100.0% | }
+  [  64] ↔ [  63] |  73.3% | return max;
+  [  65] ↔ [  23] | 100.0% | }
+  [  67] ↔ [  66] |  76.7% | public static int calculateSum(int[] arr) {
+  [  69] ↔ [  40] |  70.4% | for (int num : arr) {
+  [  71] ↔ [  23] | 100.0% | }
+  [  73] ↔ [  23] | 100.0% | }
+  [  75] ↔ [  74] |  70.0% | public static double calculateAverage(int[] arr) {
+  [  76] ↔ [  75] |  74.5% | return (double) calculateSum(arr) / arr.length;
+  [  77] ↔ [  23] | 100.0% | }
+  [  78] ↔ [  23] | 100.0% | }
+
+================================================================================
+
+################################################################################
+COMPARISON #3: StudentCode1.java vs StudentCode3.java
+STATUS: Normal - No significant plagiarism detected
+################################################################################
+
+FILE INFORMATION:
+--------------------------------------------------------------------------------
+File A: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode1.java
+  Total Lines: 39
+  Matched Lines: 20 (51.3% of file)
+
+File B: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode3.java
+  Total Lines: 44
+  Matched Lines: 10 (22.7% of file)
+
+SIMILARITY METRICS:
+--------------------------------------------------------------------------------
+  N-gram Jaccard Similarity : 0.362 (36.2%)
+  KMP Pattern Match         : 0.000
+  Rabin-Karp Pattern Match  : 0.000
+  Suffix Array Match        : 0.000
+  Edit Distance (Normalized): 0.685 (68.5%)
+
+  >> OVERALL AVERAGE SIMILARITY: 0.209 (20.9%)
+
+LINE-BY-LINE PLAGIARISM ANALYSIS:
+--------------------------------------------------------------------------------
+Total Similar Line Pairs: 20
+Average Line Similarity: 94.9%
+
+SIMILAR CODE BLOCKS DETECTED:
+--------------------------------------------------------------------------------
+
+  Block #12:
+    Location: Lines 27-28 (File A) ↔ Lines 32-33 (File B)
+    Size: 2 consecutive lines
+    Average Similarity: 83.5%
+
+    Detailed Line Matches:
+      Line 27 ↔ Line 32 (81.8% similar)
+        File A: public static boolean isPrime(int num) {
+        File B: public static boolean isPrimeNumber(int n) {
+      Line 28 ↔ Line 33 (85.2% similar)
+        File A: if (num <= 1) return false;
+        File B: if (n < 2) return false;
+
+
+ALL SIMILAR LINE PAIRS:
+--------------------------------------------------------------------------------
+Format: [Line# in A] ↔ [Line# in B] | Similarity | Content Preview
+
+  [   1] ↔ [   1] |  96.3% | public class StudentCode1 {
+  [   5] ↔ [   5] | 100.0% | public static void main(String[] args) {
+  [  11] ↔ [  15] |  90.3% | for (int i = 1; i <= 10; i++) {
+  [  13] ↔ [  17] | 100.0% | }
+  [  14] ↔ [  17] | 100.0% | }
+  [  16] ↔ [  20] |  89.1% | public static long calculateFactorial(int n) {
+  [  18] ↔ [  22] | 100.0% | return 1;
+  [  19] ↔ [  17] | 100.0% | }
+  [  21] ↔ [  15] |  80.6% | for (int i = 2; i <= n; i++) {
+  [  23] ↔ [  17] | 100.0% | }
+  [  25] ↔ [  17] | 100.0% | }
+  [  27] ↔ [  32] |  81.8% | public static boolean isPrime(int num) {
+  [  28] ↔ [  33] |  85.2% | if (num <= 1) return false;
+  [  30] ↔ [  33] |  74.2% | if (num % 2 == 0) return false;
+  [  34] ↔ [  39] | 100.0% | return false;
+  [  35] ↔ [  17] | 100.0% | }
+  [  36] ↔ [  17] | 100.0% | }
+  [  37] ↔ [  42] | 100.0% | return true;
+  [  38] ↔ [  17] | 100.0% | }
+  [  39] ↔ [  17] | 100.0% | }
+
+================================================================================
+
+################################################################################
+COMPARISON #4: StudentCode2.java vs StudentCode3.java
+STATUS: Normal - No significant plagiarism detected
+################################################################################
+
+FILE INFORMATION:
+--------------------------------------------------------------------------------
+File A: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode2.java
+  Total Lines: 39
+  Matched Lines: 21 (53.8% of file)
+
+File B: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode3.java
+  Total Lines: 44
+  Matched Lines: 12 (27.3% of file)
+
+SIMILARITY METRICS:
+--------------------------------------------------------------------------------
+  N-gram Jaccard Similarity : 0.348 (34.8%)
+  KMP Pattern Match         : 0.000
+  Rabin-Karp Pattern Match  : 0.000
+  Suffix Array Match        : 0.000
+  Edit Distance (Normalized): 0.671 (67.1%)
+
+  >> OVERALL AVERAGE SIMILARITY: 0.204 (20.4%)
+
+LINE-BY-LINE PLAGIARISM ANALYSIS:
+--------------------------------------------------------------------------------
+Total Similar Line Pairs: 21
+Average Line Similarity: 92.8%
+
+SIMILAR CODE BLOCKS DETECTED:
+--------------------------------------------------------------------------------
+
+
+ALL SIMILAR LINE PAIRS:
+--------------------------------------------------------------------------------
+Format: [Line# in A] ↔ [Line# in B] | Similarity | Content Preview
+
+  [   1] ↔ [   1] |  96.3% | public class StudentCode2 {
+  [   5] ↔ [   5] | 100.0% | public static void main(String[] args) {
+  [   6] ↔ [   9] |  71.4% | int num = 5;
+  [  11] ↔ [  15] |  90.3% | for (int i = 1; i <= 10; i++) {
+  [  13] ↔ [  17] | 100.0% | }
+  [  14] ↔ [  17] | 100.0% | }
+  [  16] ↔ [  20] |  84.1% | public static long factorial(int n) {
+  [  18] ↔ [  22] | 100.0% | return 1;
+  [  19] ↔ [  17] | 100.0% | }
+  [  20] ↔ [  25] |  76.5% | long result = 1;
+  [  21] ↔ [  15] |  80.6% | for (int i = 2; i <= n; i++) {
+  [  23] ↔ [  17] | 100.0% | }
+  [  24] ↔ [  29] |  73.3% | return result;
+  [  25] ↔ [  17] | 100.0% | }
+  [  28] ↔ [  33] |  76.7% | if (number <= 1) return false;
+  [  34] ↔ [  39] | 100.0% | return false;
+  [  35] ↔ [  17] | 100.0% | }
+  [  36] ↔ [  17] | 100.0% | }
+  [  37] ↔ [  42] | 100.0% | return true;
+  [  38] ↔ [  17] | 100.0% | }
+  [  39] ↔ [  17] | 100.0% | }
+
+================================================================================
+
+################################################################################
+COMPARISON #5: StudentCode3.java vs StudentCode6.java
+STATUS: Normal - No significant plagiarism detected
+################################################################################
+
+FILE INFORMATION:
+--------------------------------------------------------------------------------
+File A: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode3.java
+  Total Lines: 44
+  Matched Lines: 13 (29.5% of file)
+
+File B: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode6.java
+  Total Lines: 58
+  Matched Lines: 5 (8.6% of file)
+
+SIMILARITY METRICS:
+--------------------------------------------------------------------------------
+  N-gram Jaccard Similarity : 0.133 (13.3%)
+  KMP Pattern Match         : 0.000
+  Rabin-Karp Pattern Match  : 0.000
+  Suffix Array Match        : 0.000
+  Edit Distance (Normalized): 0.412 (41.2%)
+
+  >> OVERALL AVERAGE SIMILARITY: 0.109 (10.9%)
+
+LINE-BY-LINE PLAGIARISM ANALYSIS:
+--------------------------------------------------------------------------------
+Total Similar Line Pairs: 13
+Average Line Similarity: 96.8%
+
+SIMILAR CODE BLOCKS DETECTED:
+--------------------------------------------------------------------------------
+
+
+ALL SIMILAR LINE PAIRS:
+--------------------------------------------------------------------------------
+Format: [Line# in A] ↔ [Line# in B] | Similarity | Content Preview
+
+  [   1] ↔ [   1] |  96.3% | public class StudentCode3 {
+  [   5] ↔ [   5] | 100.0% | public static void main(String[] args) {
+  [  17] ↔ [  20] | 100.0% | }
+  [  18] ↔ [  20] | 100.0% | }
+  [  22] ↔ [  43] |  88.9% | return 1;
+  [  23] ↔ [  20] | 100.0% | }
+  [  28] ↔ [  20] | 100.0% | }
+  [  29] ↔ [  56] |  73.3% | return product;
+  [  30] ↔ [  20] | 100.0% | }
+  [  40] ↔ [  20] | 100.0% | }
+  [  41] ↔ [  20] | 100.0% | }
+  [  43] ↔ [  20] | 100.0% | }
+  [  44] ↔ [  20] | 100.0% | }
+
+================================================================================
+
+################################################################################
+COMPARISON #6: StudentCode4.java vs StudentCode6.java
+STATUS: Normal - No significant plagiarism detected
+################################################################################
+
+FILE INFORMATION:
+--------------------------------------------------------------------------------
+File A: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode4.java
+  Total Lines: 78
+  Matched Lines: 26 (33.3% of file)
+
+File B: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode6.java
+  Total Lines: 58
+  Matched Lines: 6 (10.3% of file)
+
+SIMILARITY METRICS:
+--------------------------------------------------------------------------------
+  N-gram Jaccard Similarity : 0.134 (13.4%)
+  KMP Pattern Match         : 0.000
+  Rabin-Karp Pattern Match  : 0.000
+  Suffix Array Match        : 0.000
+  Edit Distance (Normalized): 0.400 (40.0%)
+
+  >> OVERALL AVERAGE SIMILARITY: 0.107 (10.7%)
+
+LINE-BY-LINE PLAGIARISM ANALYSIS:
+--------------------------------------------------------------------------------
+Total Similar Line Pairs: 26
+Average Line Similarity: 92.6%
+
+SIMILAR CODE BLOCKS DETECTED:
+--------------------------------------------------------------------------------
+
+
+ALL SIMILAR LINE PAIRS:
+--------------------------------------------------------------------------------
+Format: [Line# in A] ↔ [Line# in B] | Similarity | Content Preview
+
+  [   4] ↔ [   1] |  96.3% | public class StudentCode4 {
+  [   8] ↔ [   5] | 100.0% | public static void main(String[] args) {
+  [  11] ↔ [   8] |  77.5% | System.out.println("Original array:");
+  [  24] ↔ [  20] | 100.0% | }
+  [  26] ↔ [   5] |  71.4% | public static void bubbleSort(int[] arr) {
+  [  35] ↔ [  20] | 100.0% | }
+  [  36] ↔ [  20] | 100.0% | }
+  [  37] ↔ [  20] | 100.0% | }
+  [  38] ↔ [  20] | 100.0% | }
+  [  40] ↔ [   5] |  73.8% | public static void printArray(int[] arr) {
+  [  43] ↔ [  20] | 100.0% | }
+  [  45] ↔ [  20] | 100.0% | }
+  [  52] ↔ [  20] | 100.0% | }
+  [  53] ↔ [  20] | 100.0% | }
+  [  54] ↔ [  43] |  72.7% | return min;
+  [  55] ↔ [  20] | 100.0% | }
+  [  62] ↔ [  20] | 100.0% | }
+  [  63] ↔ [  20] | 100.0% | }
+  [  64] ↔ [  43] |  72.7% | return max;
+  [  65] ↔ [  20] | 100.0% | }
+  [  68] ↔ [  49] |  71.4% | int sum = 0;
+  [  71] ↔ [  20] | 100.0% | }
+  [  72] ↔ [  43] |  72.7% | return sum;
+  [  73] ↔ [  20] | 100.0% | }
+  [  77] ↔ [  20] | 100.0% | }
+  [  78] ↔ [  20] | 100.0% | }
+
+================================================================================
+
+################################################################################
+COMPARISON #7: StudentCode1.java vs StudentCode4.java
+STATUS: Normal - No significant plagiarism detected
+################################################################################
+
+FILE INFORMATION:
+--------------------------------------------------------------------------------
+File A: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode1.java
+  Total Lines: 39
+  Matched Lines: 15 (38.5% of file)
+
+File B: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode4.java
+  Total Lines: 78
+  Matched Lines: 6 (7.7% of file)
+
+SIMILARITY METRICS:
+--------------------------------------------------------------------------------
+  N-gram Jaccard Similarity : 0.171 (17.1%)
+  KMP Pattern Match         : 0.000
+  Rabin-Karp Pattern Match  : 0.000
+  Suffix Array Match        : 0.000
+  Edit Distance (Normalized): 0.362 (36.2%)
+
+  >> OVERALL AVERAGE SIMILARITY: 0.107 (10.7%)
+
+LINE-BY-LINE PLAGIARISM ANALYSIS:
+--------------------------------------------------------------------------------
+Total Similar Line Pairs: 15
+Average Line Similarity: 93.8%
+
+SIMILAR CODE BLOCKS DETECTED:
+--------------------------------------------------------------------------------
+
+
+ALL SIMILAR LINE PAIRS:
+--------------------------------------------------------------------------------
+Format: [Line# in A] ↔ [Line# in B] | Similarity | Content Preview
+
+  [   1] ↔ [   4] |  96.3% | public class StudentCode1 {
+  [   5] ↔ [   8] | 100.0% | public static void main(String[] args) {
+  [  11] ↔ [  28] |  81.8% | for (int i = 1; i <= 10; i++) {
+  [  13] ↔ [  24] | 100.0% | }
+  [  14] ↔ [  24] | 100.0% | }
+  [  18] ↔ [  54] |  72.7% | return 1;
+  [  19] ↔ [  24] | 100.0% | }
+  [  21] ↔ [  28] |  81.8% | for (int i = 2; i <= n; i++) {
+  [  23] ↔ [  24] | 100.0% | }
+  [  25] ↔ [  24] | 100.0% | }
+  [  35] ↔ [  24] | 100.0% | }
+  [  36] ↔ [  24] | 100.0% | }
+  [  37] ↔ [  72] |  75.0% | return true;
+  [  38] ↔ [  24] | 100.0% | }
+  [  39] ↔ [  24] | 100.0% | }
+
+================================================================================
+
+################################################################################
+COMPARISON #8: StudentCode1.java vs StudentCode6.java
+STATUS: Normal - No significant plagiarism detected
+################################################################################
+
+FILE INFORMATION:
+--------------------------------------------------------------------------------
+File A: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode1.java
+  Total Lines: 39
+  Matched Lines: 13 (33.3% of file)
+
+File B: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode6.java
+  Total Lines: 58
+  Matched Lines: 5 (8.6% of file)
+
+SIMILARITY METRICS:
+--------------------------------------------------------------------------------
+  N-gram Jaccard Similarity : 0.153 (15.3%)
+  KMP Pattern Match         : 0.000
+  Rabin-Karp Pattern Match  : 0.000
+  Suffix Array Match        : 0.000
+  Edit Distance (Normalized): 0.379 (37.9%)
+
+  >> OVERALL AVERAGE SIMILARITY: 0.106 (10.6%)
+
+LINE-BY-LINE PLAGIARISM ANALYSIS:
+--------------------------------------------------------------------------------
+Total Similar Line Pairs: 13
+Average Line Similarity: 96.8%
+
+SIMILAR CODE BLOCKS DETECTED:
+--------------------------------------------------------------------------------
+
+
+ALL SIMILAR LINE PAIRS:
+--------------------------------------------------------------------------------
+Format: [Line# in A] ↔ [Line# in B] | Similarity | Content Preview
+
+  [   1] ↔ [   1] |  96.3% | public class StudentCode1 {
+  [   5] ↔ [   5] | 100.0% | public static void main(String[] args) {
+  [  13] ↔ [  20] | 100.0% | }
+  [  14] ↔ [  20] | 100.0% | }
+  [  18] ↔ [  43] |  88.9% | return 1;
+  [  19] ↔ [  20] | 100.0% | }
+  [  23] ↔ [  20] | 100.0% | }
+  [  25] ↔ [  20] | 100.0% | }
+  [  27] ↔ [  30] |  72.9% | public static boolean isPrime(int num) {
+  [  35] ↔ [  20] | 100.0% | }
+  [  36] ↔ [  20] | 100.0% | }
+  [  38] ↔ [  20] | 100.0% | }
+  [  39] ↔ [  20] | 100.0% | }
+
+================================================================================
+
+################################################################################
+COMPARISON #9: StudentCode5.java vs StudentCode6.java
+STATUS: Normal - No significant plagiarism detected
+################################################################################
+
+FILE INFORMATION:
+--------------------------------------------------------------------------------
+File A: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode5.java
+  Total Lines: 77
+  Matched Lines: 20 (26.0% of file)
+
+File B: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode6.java
+  Total Lines: 58
+  Matched Lines: 4 (6.9% of file)
+
+SIMILARITY METRICS:
+--------------------------------------------------------------------------------
+  N-gram Jaccard Similarity : 0.130 (13.0%)
+  KMP Pattern Match         : 0.000
+  Rabin-Karp Pattern Match  : 0.000
+  Suffix Array Match        : 0.000
+  Edit Distance (Normalized): 0.401 (40.1%)
+
+  >> OVERALL AVERAGE SIMILARITY: 0.106 (10.6%)
+
+LINE-BY-LINE PLAGIARISM ANALYSIS:
+--------------------------------------------------------------------------------
+Total Similar Line Pairs: 20
+Average Line Similarity: 98.4%
+
+SIMILAR CODE BLOCKS DETECTED:
+--------------------------------------------------------------------------------
+
+
+ALL SIMILAR LINE PAIRS:
+--------------------------------------------------------------------------------
+Format: [Line# in A] ↔ [Line# in B] | Similarity | Content Preview
+
+  [   3] ↔ [   1] |  96.3% | public class StudentCode5 {
+  [   7] ↔ [   5] | 100.0% | public static void main(String[] args) {
+  [  23] ↔ [  20] | 100.0% | }
+  [  34] ↔ [  20] | 100.0% | }
+  [  35] ↔ [  20] | 100.0% | }
+  [  36] ↔ [  20] | 100.0% | }
+  [  37] ↔ [  20] | 100.0% | }
+  [  42] ↔ [  20] | 100.0% | }
+  [  44] ↔ [  20] | 100.0% | }
+  [  51] ↔ [  20] | 100.0% | }
+  [  52] ↔ [  20] | 100.0% | }
+  [  54] ↔ [  20] | 100.0% | }
+  [  61] ↔ [  20] | 100.0% | }
+  [  62] ↔ [  20] | 100.0% | }
+  [  64] ↔ [  20] | 100.0% | }
+  [  67] ↔ [  49] |  71.4% | int total = 0;
+  [  70] ↔ [  20] | 100.0% | }
+  [  72] ↔ [  20] | 100.0% | }
+  [  76] ↔ [  20] | 100.0% | }
+  [  77] ↔ [  20] | 100.0% | }
+
+================================================================================
+
+################################################################################
+COMPARISON #10: StudentCode2.java vs StudentCode6.java
+STATUS: Normal - No significant plagiarism detected
+################################################################################
+
+FILE INFORMATION:
+--------------------------------------------------------------------------------
+File A: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode2.java
+  Total Lines: 39
+  Matched Lines: 13 (33.3% of file)
+
+File B: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode6.java
+  Total Lines: 58
+  Matched Lines: 5 (8.6% of file)
+
+SIMILARITY METRICS:
+--------------------------------------------------------------------------------
+  N-gram Jaccard Similarity : 0.150 (15.0%)
+  KMP Pattern Match         : 0.000
+  Rabin-Karp Pattern Match  : 0.000
+  Suffix Array Match        : 0.000
+  Edit Distance (Normalized): 0.381 (38.1%)
+
+  >> OVERALL AVERAGE SIMILARITY: 0.106 (10.6%)
+
+LINE-BY-LINE PLAGIARISM ANALYSIS:
+--------------------------------------------------------------------------------
+Total Similar Line Pairs: 13
+Average Line Similarity: 96.7%
+
+SIMILAR CODE BLOCKS DETECTED:
+--------------------------------------------------------------------------------
+
+
+ALL SIMILAR LINE PAIRS:
+--------------------------------------------------------------------------------
+Format: [Line# in A] ↔ [Line# in B] | Similarity | Content Preview
+
+  [   1] ↔ [   1] |  96.3% | public class StudentCode2 {
+  [   5] ↔ [   5] | 100.0% | public static void main(String[] args) {
+  [  13] ↔ [  20] | 100.0% | }
+  [  14] ↔ [  20] | 100.0% | }
+  [  18] ↔ [  43] |  88.9% | return 1;
+  [  19] ↔ [  20] | 100.0% | }
+  [  23] ↔ [  20] | 100.0% | }
+  [  24] ↔ [  56] |  71.4% | return result;
+  [  25] ↔ [  20] | 100.0% | }
+  [  35] ↔ [  20] | 100.0% | }
+  [  36] ↔ [  20] | 100.0% | }
+  [  38] ↔ [  20] | 100.0% | }
+  [  39] ↔ [  20] | 100.0% | }
+
+================================================================================
+
+################################################################################
+COMPARISON #11: StudentCode3.java vs StudentCode4.java
+STATUS: Normal - No significant plagiarism detected
+################################################################################
+
+FILE INFORMATION:
+--------------------------------------------------------------------------------
+File A: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode3.java
+  Total Lines: 44
+  Matched Lines: 15 (34.1% of file)
+
+File B: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode4.java
+  Total Lines: 78
+  Matched Lines: 7 (9.0% of file)
+
+SIMILARITY METRICS:
+--------------------------------------------------------------------------------
+  N-gram Jaccard Similarity : 0.144 (14.4%)
+  KMP Pattern Match         : 0.000
+  Rabin-Karp Pattern Match  : 0.000
+  Suffix Array Match        : 0.000
+  Edit Distance (Normalized): 0.384 (38.4%)
+
+  >> OVERALL AVERAGE SIMILARITY: 0.106 (10.6%)
+
+LINE-BY-LINE PLAGIARISM ANALYSIS:
+--------------------------------------------------------------------------------
+Total Similar Line Pairs: 15
+Average Line Similarity: 92.5%
+
+SIMILAR CODE BLOCKS DETECTED:
+--------------------------------------------------------------------------------
+
+
+ALL SIMILAR LINE PAIRS:
+--------------------------------------------------------------------------------
+Format: [Line# in A] ↔ [Line# in B] | Similarity | Content Preview
+
+  [   1] ↔ [   4] |  96.3% | public class StudentCode3 {
+  [   5] ↔ [   8] | 100.0% | public static void main(String[] args) {
+  [  14] ↔ [  16] |  70.7% | System.out.println("\nFactorial Table:");
+  [  15] ↔ [  28] |  72.7% | for (int x = 1; x <= 10; x++) {
+  [  17] ↔ [  24] | 100.0% | }
+  [  18] ↔ [  24] | 100.0% | }
+  [  22] ↔ [  54] |  72.7% | return 1;
+  [  23] ↔ [  24] | 100.0% | }
+  [  28] ↔ [  24] | 100.0% | }
+  [  30] ↔ [  24] | 100.0% | }
+  [  40] ↔ [  24] | 100.0% | }
+  [  41] ↔ [  24] | 100.0% | }
+  [  42] ↔ [  72] |  75.0% | return true;
+  [  43] ↔ [  24] | 100.0% | }
+  [  44] ↔ [  24] | 100.0% | }
+
+================================================================================
+
+################################################################################
+COMPARISON #12: StudentCode2.java vs StudentCode4.java
+STATUS: Normal - No significant plagiarism detected
+################################################################################
+
+FILE INFORMATION:
+--------------------------------------------------------------------------------
+File A: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode2.java
+  Total Lines: 39
+  Matched Lines: 17 (43.6% of file)
+
+File B: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode4.java
+  Total Lines: 78
+  Matched Lines: 7 (9.0% of file)
+
+SIMILARITY METRICS:
+--------------------------------------------------------------------------------
+  N-gram Jaccard Similarity : 0.169 (16.9%)
+  KMP Pattern Match         : 0.000
+  Rabin-Karp Pattern Match  : 0.000
+  Suffix Array Match        : 0.000
+  Edit Distance (Normalized): 0.357 (35.7%)
+
+  >> OVERALL AVERAGE SIMILARITY: 0.105 (10.5%)
+
+LINE-BY-LINE PLAGIARISM ANALYSIS:
+--------------------------------------------------------------------------------
+Total Similar Line Pairs: 17
+Average Line Similarity: 91.9%
+
+SIMILAR CODE BLOCKS DETECTED:
+--------------------------------------------------------------------------------
+
+
+ALL SIMILAR LINE PAIRS:
+--------------------------------------------------------------------------------
+Format: [Line# in A] ↔ [Line# in B] | Similarity | Content Preview
+
+  [   1] ↔ [   4] |  96.3% | public class StudentCode2 {
+  [   5] ↔ [   8] | 100.0% | public static void main(String[] args) {
+  [   6] ↔ [  68] |  83.3% | int num = 5;
+  [  11] ↔ [  28] |  81.8% | for (int i = 1; i <= 10; i++) {
+  [  13] ↔ [  24] | 100.0% | }
+  [  14] ↔ [  24] | 100.0% | }
+  [  18] ↔ [  54] |  72.7% | return 1;
+  [  19] ↔ [  24] | 100.0% | }
+  [  21] ↔ [  28] |  81.8% | for (int i = 2; i <= n; i++) {
+  [  23] ↔ [  24] | 100.0% | }
+  [  24] ↔ [  72] |  71.4% | return result;
+  [  25] ↔ [  24] | 100.0% | }
+  [  35] ↔ [  24] | 100.0% | }
+  [  36] ↔ [  24] | 100.0% | }
+  [  37] ↔ [  72] |  75.0% | return true;
+  [  38] ↔ [  24] | 100.0% | }
+  [  39] ↔ [  24] | 100.0% | }
+
+================================================================================
+
+################################################################################
+COMPARISON #13: StudentCode1.java vs StudentCode5.java
+STATUS: Normal - No significant plagiarism detected
+################################################################################
+
+FILE INFORMATION:
+--------------------------------------------------------------------------------
+File A: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode1.java
+  Total Lines: 39
+  Matched Lines: 14 (35.9% of file)
+
+File B: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode5.java
+  Total Lines: 77
+  Matched Lines: 5 (6.5% of file)
+
+SIMILARITY METRICS:
+--------------------------------------------------------------------------------
+  N-gram Jaccard Similarity : 0.166 (16.6%)
+  KMP Pattern Match         : 0.000
+  Rabin-Karp Pattern Match  : 0.000
+  Suffix Array Match        : 0.000
+  Edit Distance (Normalized): 0.359 (35.9%)
+
+  >> OVERALL AVERAGE SIMILARITY: 0.105 (10.5%)
+
+LINE-BY-LINE PLAGIARISM ANALYSIS:
+--------------------------------------------------------------------------------
+Total Similar Line Pairs: 14
+Average Line Similarity: 93.5%
+
+SIMILAR CODE BLOCKS DETECTED:
+--------------------------------------------------------------------------------
+
+
+ALL SIMILAR LINE PAIRS:
+--------------------------------------------------------------------------------
+Format: [Line# in A] ↔ [Line# in B] | Similarity | Content Preview
+
+  [   1] ↔ [   3] |  96.3% | public class StudentCode1 {
+  [   5] ↔ [   7] | 100.0% | public static void main(String[] args) {
+  [  11] ↔ [  27] |  71.1% | for (int i = 1; i <= 10; i++) {
+  [  13] ↔ [  23] | 100.0% | }
+  [  14] ↔ [  23] | 100.0% | }
+  [  19] ↔ [  23] | 100.0% | }
+  [  21] ↔ [  27] |  71.1% | for (int i = 2; i <= n; i++) {
+  [  23] ↔ [  23] | 100.0% | }
+  [  24] ↔ [  71] |  70.6% | return factorial;
+  [  25] ↔ [  23] | 100.0% | }
+  [  35] ↔ [  23] | 100.0% | }
+  [  36] ↔ [  23] | 100.0% | }
+  [  38] ↔ [  23] | 100.0% | }
+  [  39] ↔ [  23] | 100.0% | }
+
+================================================================================
+
+################################################################################
+COMPARISON #14: StudentCode3.java vs StudentCode5.java
+STATUS: Normal - No significant plagiarism detected
+################################################################################
+
+FILE INFORMATION:
+--------------------------------------------------------------------------------
+File A: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode3.java
+  Total Lines: 44
+  Matched Lines: 12 (27.3% of file)
+
+File B: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode5.java
+  Total Lines: 77
+  Matched Lines: 4 (5.2% of file)
+
+SIMILARITY METRICS:
+--------------------------------------------------------------------------------
+  N-gram Jaccard Similarity : 0.136 (13.6%)
+  KMP Pattern Match         : 0.000
+  Rabin-Karp Pattern Match  : 0.000
+  Suffix Array Match        : 0.000
+  Edit Distance (Normalized): 0.386 (38.6%)
+
+  >> OVERALL AVERAGE SIMILARITY: 0.104 (10.4%)
+
+LINE-BY-LINE PLAGIARISM ANALYSIS:
+--------------------------------------------------------------------------------
+Total Similar Line Pairs: 12
+Average Line Similarity: 97.5%
+
+SIMILAR CODE BLOCKS DETECTED:
+--------------------------------------------------------------------------------
+
+
+ALL SIMILAR LINE PAIRS:
+--------------------------------------------------------------------------------
+Format: [Line# in A] ↔ [Line# in B] | Similarity | Content Preview
+
+  [   1] ↔ [   3] |  96.3% | public class StudentCode3 {
+  [   5] ↔ [   7] | 100.0% | public static void main(String[] args) {
+  [  14] ↔ [  15] |  73.2% | System.out.println("\nFactorial Table:");
+  [  17] ↔ [  23] | 100.0% | }
+  [  18] ↔ [  23] | 100.0% | }
+  [  23] ↔ [  23] | 100.0% | }
+  [  28] ↔ [  23] | 100.0% | }
+  [  30] ↔ [  23] | 100.0% | }
+  [  40] ↔ [  23] | 100.0% | }
+  [  41] ↔ [  23] | 100.0% | }
+  [  43] ↔ [  23] | 100.0% | }
+  [  44] ↔ [  23] | 100.0% | }
+
+================================================================================
+
+################################################################################
+COMPARISON #15: StudentCode2.java vs StudentCode5.java
+STATUS: Normal - No significant plagiarism detected
+################################################################################
+
+FILE INFORMATION:
+--------------------------------------------------------------------------------
+File A: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode2.java
+  Total Lines: 39
+  Matched Lines: 13 (33.3% of file)
+
+File B: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\StudentCode5.java
+  Total Lines: 77
+  Matched Lines: 4 (5.2% of file)
+
+SIMILARITY METRICS:
+--------------------------------------------------------------------------------
+  N-gram Jaccard Similarity : 0.160 (16.0%)
+  KMP Pattern Match         : 0.000
+  Rabin-Karp Pattern Match  : 0.000
+  Suffix Array Match        : 0.000
+  Edit Distance (Normalized): 0.358 (35.8%)
+
+  >> OVERALL AVERAGE SIMILARITY: 0.104 (10.4%)
+
+LINE-BY-LINE PLAGIARISM ANALYSIS:
+--------------------------------------------------------------------------------
+Total Similar Line Pairs: 13
+Average Line Similarity: 95.3%
+
+SIMILAR CODE BLOCKS DETECTED:
+--------------------------------------------------------------------------------
+
+
+ALL SIMILAR LINE PAIRS:
+--------------------------------------------------------------------------------
+Format: [Line# in A] ↔ [Line# in B] | Similarity | Content Preview
+
+  [   1] ↔ [   3] |  96.3% | public class StudentCode2 {
+  [   5] ↔ [   7] | 100.0% | public static void main(String[] args) {
+  [  11] ↔ [  27] |  71.1% | for (int i = 1; i <= 10; i++) {
+  [  13] ↔ [  23] | 100.0% | }
+  [  14] ↔ [  23] | 100.0% | }
+  [  19] ↔ [  23] | 100.0% | }
+  [  21] ↔ [  27] |  71.1% | for (int i = 2; i <= n; i++) {
+  [  23] ↔ [  23] | 100.0% | }
+  [  25] ↔ [  23] | 100.0% | }
+  [  35] ↔ [  23] | 100.0% | }
+  [  36] ↔ [  23] | 100.0% | }
+  [  38] ↔ [  23] | 100.0% | }
+  [  39] ↔ [  23] | 100.0% | }
+
+================================================================================
+
+================================================================================
+                    END OF REPORT
+================================================================================

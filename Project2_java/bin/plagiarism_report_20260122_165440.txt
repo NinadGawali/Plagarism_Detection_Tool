@@ -1,0 +1,45 @@
+================================================================================
+PLAGIARISM DETECTION REPORT
+================================================================================
+Generated: 2026-01-22 16:54:40
+
+FILES ANALYZED:
+--------------------------------------------------------------------------------
+1. C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\SampleB.java
+2. C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\SampleA.java
+
+SIMILARITY THRESHOLD: 75.0%
+LINE SIMILARITY THRESHOLD: 70.0%
+
+================================================================================
+DETAILED COMPARISON RESULTS
+================================================================================
+
+[Comparison 1] [!] SUSPICIOUS - POSSIBLE PLAGIARISM
+--------------------------------------------------------------------------------
+File A: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\SampleB.java
+File B: C:\Users\JCIN\OneDrive\Desktop\Plagarism_Detection_Tool\SampleA.java
+
+Similarity Metrics:
+  N-gram Jaccard       : 0.993 (99.3%)
+  KMP sample match     : 1.000
+  Rabin-Karp sample    : 1.000
+  Suffix-array sample  : 1.000
+  Edit-distance (norm) : 0.995 (99.5%)
+  >> AVERAGE SIMILARITY : 0.998 (99.8%) [!]
+
+Similar Code Sections:
+  * Lines 2-4 (File A) ? Lines 1-3 (File B) - 100.0% similar
+  * Lines 5-7 (File A) ? Lines 3-6 (File B) - 100.0% similar
+--------------------------------------------------------------------------------
+
+================================================================================
+SUMMARY
+================================================================================
+Total Comparisons: 1
+Suspicious Pairs: 1
+Clean Pairs: 0
+
+================================================================================
+END OF REPORT
+================================================================================
