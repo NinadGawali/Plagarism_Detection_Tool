@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Similarity Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-shape shape-a"></div>
+    <div class="bg-shape shape-b"></div>
+
+    <main class="shell">
+      <header class="hero">
+        <p class="eyebrow">Academic Integrity Toolkit</p>
+        <h1>Code Similarity Dashboard</h1>
+        <p class="subtitle">
+          Drop student submissions, run algorithmic comparison, and inspect suspicious pairs in one place.
+        </p>
+      </header>
+
+      <section class="panel upload-panel">
+        <h2>1. Upload Source Files</h2>
+        <label id="dropzone" class="dropzone" for="file-input">
+          <input id="file-input" type="file" accept=".java,.txt,.py,.cpp,.c,.js" multiple />
+          <div>
+            <p class="drop-title">Drag and drop files here</p>
+            <p class="drop-meta">or click to browse. Minimum 2 files required.</p>
+          </div>
+        </label>
+
+        <div class="selected-wrap">
+          <p class="selected-label">Selected files</p>
+          <ul id="file-list" class="file-list"></ul>
+        </div>
+
+        <button id="analyze-btn" class="analyze-btn" disabled>Analyze Similarity</button>
+        <p id="status" class="status"></p>
+      </section>
+
+      <section id="results-section" class="panel results-panel hidden">
+        <h2>2. Results</h2>
+        <div id="summary-grid" class="summary-grid"></div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Pair</th>
+                <th>Strict Similarity</th>
+                <th>Flag</th>
+                <th>N-Gram</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody id="results-body"></tbody>
+          </table>
+        </div>
+
+        <div id="detail-view" class="detail-view"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
