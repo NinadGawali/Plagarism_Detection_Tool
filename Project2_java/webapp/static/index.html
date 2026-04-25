@@ -3,65 +3,278 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Code Similarity Dashboard</title>
+    <title>PlagueDetect — Code Plagiarism Analyzer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="bg-shape shape-a"></div>
-    <div class="bg-shape shape-b"></div>
+    <!-- Animated background grid -->
+    <canvas id="grid-canvas"></canvas>
+    <div class="noise-overlay"></div>
 
-    <main class="shell">
-      <header class="hero">
-        <p class="eyebrow">Academic Integrity Toolkit</p>
-        <h1>Code Similarity Dashboard</h1>
-        <p class="subtitle">
-          Drop student submissions, run algorithmic comparison, and inspect suspicious pairs in one place.
-        </p>
-      </header>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <div class="logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">PlagueDetect</span>
+      </div>
+      <div class="nav-links">
+        <a class="nav-link active" data-tab="upload" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Upload
+        </a>
+        <a class="nav-link" data-tab="results" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg>
+          Results
+        </a>
+        <a class="nav-link" data-tab="diff" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 0-2-2V9m0 0h18"/></svg>
+          Diff Viewer
+        </a>
+        <a class="nav-link" data-tab="history" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          History
+        </a>
+      </div>
+      <div class="sidebar-footer">
+        <div class="theme-toggle" id="theme-toggle" title="Toggle theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </div>
+      </div>
+    </nav>
 
-      <section class="panel upload-panel">
-        <h2>1. Upload Source Files</h2>
-        <label id="dropzone" class="dropzone" for="file-input">
-          <input id="file-input" type="file" accept=".java,.txt,.py,.cpp,.c,.js" multiple />
+    <!-- Main Content -->
+    <main class="main">
+
+      <!-- ============== UPLOAD TAB ============== -->
+      <section class="tab-content active" id="tab-upload">
+        <div class="page-header">
           <div>
-            <p class="drop-title">Drag and drop files here</p>
-            <p class="drop-meta">or click to browse. Minimum 2 files required.</p>
+            <p class="eyebrow">Academic Integrity System</p>
+            <h1 class="page-title">Code Plagiarism<br><span class="accent-text">Analyzer</span></h1>
           </div>
-        </label>
-
-        <div class="selected-wrap">
-          <p class="selected-label">Selected files</p>
-          <ul id="file-list" class="file-list"></ul>
+          <div class="header-badge">
+            <span class="badge-dot"></span>
+            <span>System Ready</span>
+          </div>
         </div>
 
-        <button id="analyze-btn" class="analyze-btn" disabled>Analyze Similarity</button>
-        <p id="status" class="status"></p>
-      </section>
+        <!-- Upload Zone -->
+        <div class="card upload-card">
+          <div class="card-header">
+            <h2>Upload Source Files</h2>
+            <span class="card-badge">Step 1</span>
+          </div>
 
-      <section id="results-section" class="panel results-panel hidden">
-        <h2>2. Results</h2>
-        <div id="summary-grid" class="summary-grid"></div>
+          <label id="dropzone" class="dropzone" for="file-input">
+            <input id="file-input" type="file" accept=".java,.txt,.py,.cpp,.c,.js,.ts,.cs,.rb" multiple />
+            <div class="dropzone-inner">
+              <div class="drop-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="12" y2="12"/><line x1="15" y1="15" x2="12" y2="12"/></svg>
+              </div>
+              <p class="drop-title">Drop student files here</p>
+              <p class="drop-meta">Supports: .java .py .cpp .c .js .ts .cs .rb · Min. 2 files required</p>
+              <div class="drop-btn">Browse Files</div>
+            </div>
+          </label>
 
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Pair</th>
-                <th>Strict Similarity</th>
-                <th>Flag</th>
-                <th>N-Gram</th>
-                <th>Edit</th>
-              </tr>
-            </thead>
-            <tbody id="results-body"></tbody>
-          </table>
+          <!-- File List -->
+          <div class="file-list-wrap" id="file-list-wrap">
+            <div class="file-list-header">
+              <span class="file-count" id="file-count">0 files selected</span>
+              <button class="clear-btn" id="clear-btn">Clear All</button>
+            </div>
+            <ul id="file-list" class="file-list"></ul>
+          </div>
+
+          <!-- Settings Row -->
+          <div class="settings-row">
+            <div class="setting-item">
+              <label class="setting-label">Suspicion Threshold</label>
+              <div class="slider-wrap">
+                <input type="range" min="50" max="95" value="75" class="slider" id="threshold-slider" />
+                <span class="slider-val" id="threshold-val">75%</span>
+              </div>
+            </div>
+            <div class="setting-item">
+              <label class="setting-label">Algorithm Focus</label>
+              <select class="select" id="algo-select">
+                <option value="strict">Strict (All Methods)</option>
+                <option value="ngram">N-Gram Jaccard</option>
+                <option value="edit">Edit Distance</option>
+              </select>
+            </div>
+          </div>
+
+          <button id="analyze-btn" class="analyze-btn" disabled>
+            <span class="btn-content">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              Run Analysis
+            </span>
+            <div class="btn-shimmer"></div>
+          </button>
+
+          <div id="progress-wrap" class="progress-wrap hidden">
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <p class="progress-label" id="progress-label">Initializing...</p>
+          </div>
+
+          <p id="status" class="status"></p>
         </div>
 
-        <div id="detail-view" class="detail-view"></div>
+        <!-- Quick Tips -->
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-icon">🎯</div>
+            <h3>Smart Flagging</h3>
+            <p>Pairs scoring ≥75% are automatically flagged as suspicious with visual alerts.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">📊</div>
+            <h3>Multi-Algorithm</h3>
+            <p>N-Gram, Rabin-Karp, KMP, Suffix Array, and Edit Distance work together.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">🔍</div>
+            <h3>Line-by-Line Diff</h3>
+            <p>See exactly which lines were copied with our side-by-side diff viewer.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">📄</div>
+            <h3>PDF Export</h3>
+            <p>Generate professional forensic reports you can submit or archive.</p>
+          </div>
+        </div>
       </section>
+
+      <!-- ============== RESULTS TAB ============== -->
+      <section class="tab-content" id="tab-results">
+        <div class="page-header">
+          <div>
+            <p class="eyebrow">Analysis Output</p>
+            <h1 class="page-title">Results <span class="accent-text">Dashboard</span></h1>
+          </div>
+          <div class="header-actions">
+            <button class="icon-btn" id="export-pdf-btn" title="Export PDF Report">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              Export PDF
+            </button>
+            <button class="icon-btn" id="sort-btn" title="Toggle sort order">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="5 12 12 19 19 12"/></svg>
+              Sort
+            </button>
+          </div>
+        </div>
+
+        <!-- Summary Stats -->
+        <div class="stats-row" id="summary-grid"></div>
+
+        <!-- Chart + Table layout -->
+        <div class="results-layout">
+          <!-- Chart -->
+          <div class="card chart-card">
+            <div class="card-header">
+              <h2>Similarity Distribution</h2>
+              <div class="chart-legend">
+                <span class="legend-dot suspicious"></span> Suspicious
+                <span class="legend-dot normal"></span> Normal
+              </div>
+            </div>
+            <div class="chart-wrap">
+              <canvas id="similarity-chart"></canvas>
+            </div>
+          </div>
+
+          <!-- Heatmap card -->
+          <div class="card heatmap-card">
+            <div class="card-header">
+              <h2>Risk Heatmap</h2>
+            </div>
+            <div id="heatmap-container" class="heatmap-container"></div>
+          </div>
+        </div>
+
+        <!-- Results Table -->
+        <div class="card table-card">
+          <div class="card-header">
+            <h2>Comparison Pairs</h2>
+            <input type="text" class="search-input" id="table-search" placeholder="Search pairs..." />
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="sortable" data-col="pair">Pair <span class="sort-arrow">↕</span></th>
+                  <th class="sortable" data-col="strict">Similarity <span class="sort-arrow">↕</span></th>
+                  <th>Status</th>
+                  <th class="sortable" data-col="ngram">N-Gram <span class="sort-arrow">↕</span></th>
+                  <th class="sortable" data-col="edit">Edit Dist. <span class="sort-arrow">↕</span></th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="results-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Detail Panel -->
+        <div id="detail-view" class="card detail-card hidden"></div>
+      </section>
+
+      <!-- ============== DIFF TAB ============== -->
+      <section class="tab-content" id="tab-diff">
+        <div class="page-header">
+          <div>
+            <p class="eyebrow">Line-by-Line Comparison</p>
+            <h1 class="page-title">Diff <span class="accent-text">Viewer</span></h1>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="diff-selector">
+            <select class="select" id="diff-pair-select">
+              <option value="">— Select a pair to diff —</option>
+            </select>
+            <div class="diff-legend">
+              <span class="diff-chip match">● Matched</span>
+              <span class="diff-chip partial">● Partial</span>
+              <span class="diff-chip unique">● Unique</span>
+            </div>
+          </div>
+          <div id="diff-container" class="diff-container">
+            <div class="diff-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 0-2-2V9m0 0h18"/></svg>
+              <p>Select a file pair above to view the side-by-side diff</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== HISTORY TAB ============== -->
+      <section class="tab-content" id="tab-history">
+        <div class="page-header">
+          <div>
+            <p class="eyebrow">Session Storage</p>
+            <h1 class="page-title">Analysis <span class="accent-text">History</span></h1>
+          </div>
+          <button class="icon-btn danger" id="clear-history-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+            Clear History
+          </button>
+        </div>
+        <div id="history-list" class="history-list">
+          <div class="empty-state">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <p>No analyses saved yet. Run an analysis to build history.</p>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <script src="app.js"></script>
